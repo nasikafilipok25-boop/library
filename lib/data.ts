@@ -51,7 +51,7 @@ export async function getMe() {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return null
   const { data } = await supabase.from('profiles').select('role,display_name').eq('id', user.id).maybeSingle()
-  return { id: user.id, email: user.email ?? '', role: (data?.role ?? 'user') as string }
+  return { id: user.id, email: user.email ?? '', role: (data?.role ?? 'user') as string, name: (data?.display_name ?? '') as string }
 }
 
 export function blocksToText(body: any): string {
