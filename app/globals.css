@@ -229,3 +229,33 @@ a{color:inherit;text-decoration:none}
 .prose strong{font-weight:700}
 .prose h3{font-size:25px;margin:22px 0 8px}
 .err{color:#9b2c3b;font-size:14.5px;margin:12px 0 0}
+
+/* ---- админ-панель ---- */
+.atabs{display:flex;gap:8px;margin-bottom:20px;overflow-x:auto;scrollbar-width:none}
+.atabs a{padding:10px 18px;border-radius:999px;font-weight:600;font-size:14.5px;background:var(--glass);border:1px solid var(--glass-b);white-space:nowrap}
+.atabs a.on{background:var(--ink);color:var(--bg)}
+.arow{display:flex;align-items:center;gap:14px;padding:12px;margin-bottom:12px;flex-wrap:wrap}
+.arow .cover{width:64px;aspect-ratio:1;border-radius:14px;flex:none}
+.arow .main{flex:1;min-width:170px}
+.arow .main b{display:block;font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.15;margin-bottom:4px}
+.arow .main small{color:var(--ink2);font-size:13.5px}
+.arow .acts{display:flex;gap:8px;flex-wrap:wrap}
+.arow .acts .btn{padding:10px 16px;font-size:14px}
+.fsec{padding:20px;margin-bottom:16px}
+.fsec h3{font-size:27px;margin-bottom:4px}
+.fsec .hint{color:var(--ink2);font-size:14px;margin:0 0 6px}
+.field.area{min-height:90px;resize:vertical;line-height:1.5}
+.brow{padding:14px;margin-bottom:12px}
+.brow .bh{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+.brow .bh span{font-size:13.5px;font-weight:700;color:var(--ink2)}
+.ib{width:38px;height:38px;border-radius:12px;background:var(--glass);border:1px solid var(--glass-b);font-size:16px;font-weight:700}
+.ib:disabled{opacity:.35;cursor:default}
+.addbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.addbar .tagbtn{background:var(--glass)}
+.tagbtn{padding:9px 15px;border-radius:999px;font-size:14px;font-weight:600;background:var(--glass);border:1px solid var(--glass-b)}
+.tagbtn.on{background:var(--ink);color:var(--bg)}
+.row-edit{display:flex;gap:8px;align-items:center;margin-bottom:10px;flex-wrap:wrap}
+.row-edit .field{flex:1;min-width:150px}
+input[type=color].swatch{width:46px;height:46px;border:0;padding:0;border-radius:14px;background:none;cursor:pointer}
+.okmsg{color:var(--ink2);font-size:14.5px;margin:10px 0 0}
+select.field{appearance:auto}

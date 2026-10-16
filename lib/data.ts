@@ -53,3 +53,17 @@ export async function getMe() {
   const { data } = await supabase.from('profiles').select('role,display_name').eq('id', user.id).maybeSingle()
   return { id: user.id, email: user.email ?? '', role: (data?.role ?? 'user') as string }
 }
+
+export function blocksToText(body: any): string {
+  return (Array.isArray(body) ? body : [])
+    .map((b: any) => [b.text, ...(b.items ?? []), b.caption].filter(Boolean).join(' '))
+    .join(' ')
+}
+
+// Опубликованные материалы + плоский текст конспекта (для поиска по содержимому)
+export async function getPublishedWithText(): Promise<(Mat & { text: string })[]> {
+  const supabase = createClient()
+  const { data } = await supabase.from('materials').select(MAT_FIELDS + ',body')
+    .eq('status', 'published').order('published_at', { ascending: false })
+  return (data ?? []).map((r: any) => ({ ...normalize(r), text: blocksToText(r.body) }))
+}

@@ -27,7 +27,7 @@ export default async function MaterialPage({ params }: { params: { id: string } 
           <div className="pills">
             {m.status === 'draft' && <span className="pill t">Черновик</span>}
             {m.category && <span className="pill" style={{ ['--c' as any]: m.category.color }}>{m.category.name}</span>}
-            {m.tags.map((t: string) => <span key={t} className="pill t">#{t}</span>)}
+            {m.tags.map((t: string) => <Link key={t} href={`/library?tag=${encodeURIComponent(t)}`} className="pill t">#{t}</Link>)}
           </div>
           {(m.source || date) && (
             <div className="info">
